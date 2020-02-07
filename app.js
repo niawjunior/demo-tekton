@@ -1,9 +1,6 @@
-const express = require('express')
+var http = require('http');
 
-const app = express()
-
-app.get('/', (_, res) => {
-  res.send('hello')
-})
-
-app.listen('3000')
+http.createServer((_, res) => {
+  res.write('Hello World!')
+  res.end()
+}).listen(3000);
